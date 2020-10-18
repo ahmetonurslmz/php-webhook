@@ -9,5 +9,10 @@
             "email": "ahmetonurslmz@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "AOS\\PhpWebhook\\": "src/"
+        }
+    }
 }
