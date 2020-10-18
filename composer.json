@@ -3,10 +3,13 @@
     "description": "The package enables developers to send request to discord webhook in order to create message and send it discord channel.",
     "type": "library",
     "license": "MIT",
+    "keywords": ["discord", "webhook", "discord channel"],
+    "homepage": "https://ahmetonursolmaz.com.tr",
     "authors": [
         {
             "name": "ahmetonurslmz",
-            "email": "ahmetonurslmz@gmail.com"
+            "email": "ahmetonurslmz@gmail.com",
+            "homepage": "https://ahmetonursolmaz.com.tr"
         }
     ],
     "require": {},
