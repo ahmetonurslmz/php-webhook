@@ -9,10 +9,16 @@ class Handler {
     protected $message = 'hello world';
     private $data;
     protected $token = '';
+    protected $requiredFields = array();
 
     protected function prepareRequest() {
         $data = null;
         if ($this->data) {
+            foreach ($this->requiredFields as $field) {
+                if (!array_key_exists($field, $this->data)) {
+                    throw CouldNotSend::missingDataError($field);
+                }
+            }
             $data = $this->data;
         } else {
             $data = $this->prepareData();
@@ -47,6 +53,7 @@ class Handler {
         $fp = @fopen($url, 'r', false, $context);
 
         if (!$fp) {
+            echo $fp;
             throw CouldNotSend::authorizationError();
         }
 
