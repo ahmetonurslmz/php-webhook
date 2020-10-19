@@ -15,7 +15,7 @@
     "require": {},
     "autoload" : {
         "psr-4" : {
-            "AOS\\PhpWebhook\\": "src/"
+            "PhpWebhook\\": "src/"
         }
     }
 }

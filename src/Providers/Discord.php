@@ -1,9 +1,9 @@
 <?php
 
 
-namespace AOS\PhpWebhook\Providers;
+namespace PhpWebhook\Providers;
 
-use AOS\PhpWebhook\Handler;
+use PhpWebhook\Handler;
 use stdClass;
 
 class Discord extends Handler {

@@ -1,6 +1,6 @@
 <?php
 
-namespace AOS\PhpWebhook;
+namespace PhpWebhook;
 
 use stdClass;
 
