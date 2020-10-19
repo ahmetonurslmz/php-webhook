@@ -1,5 +1,5 @@
 {
-    "name": "ahmetonurslmz/php-weebhook",
+    "name": "ahmetonurslmz/php-webhook",
     "description": "The package enables developers to send request to discord webhook in order to create message and send it discord channel.",
     "type": "library",
     "license": "MIT",
