@@ -40,7 +40,7 @@ class Handler {
         $context = $this->prepareRequest();
         $url = $this->prepareURL();
 
-        if ($this->token) {
+        if (!$this->token) {
             throw CouldNotSend::authorizationError();
         }
 
