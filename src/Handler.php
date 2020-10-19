@@ -2,11 +2,11 @@
 
 namespace PhpWebhook;
 
-use stdClass;
+use PhpWebhook\Exceptions\CouldNotSend;
 
 class Handler {
     protected $URL = '';
-    protected $message = 'AOS - hello world';
+    protected $message = 'hello world';
     private $data;
     protected $token = '';
 
@@ -29,7 +29,7 @@ class Handler {
     }
 
     protected function prepareData() {
-        return new stdClass();
+        return [];
     }
 
     protected function prepareURL() {
@@ -40,7 +40,16 @@ class Handler {
         $context = $this->prepareRequest();
         $url = $this->prepareURL();
 
-        $fp = fopen($url, 'r', false, $context);
+        if ($this->token) {
+            throw CouldNotSend::authorizationError();
+        }
+
+        $fp = @fopen($url, 'r', false, $context);
+
+        if (!$fp) {
+            throw CouldNotSend::authorizationError();
+        }
+
         fpassthru($fp);
         fclose($fp);
         return $fp;
