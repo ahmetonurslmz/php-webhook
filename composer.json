@@ -12,7 +12,9 @@
             "homepage": "https://ahmetonursolmaz.com.tr"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.4"
+    },
     "autoload" : {
         "psr-4" : {
             "PhpWebhook\\": "src/"
