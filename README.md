@@ -10,7 +10,7 @@ Use the package manager [composer](https://packagist.org/packages/ahmetonurslmz/
 composer require ahmetonurslmz/php-webhook
 ```
 
-## Usage
+## Basic Usage
 
 ### Discord Webhook
 
@@ -35,6 +35,29 @@ Token which exists in the webhook URL:
 ```bash
 765243409241604116/cN5-Tv-j2Zo1fp8B_TmVkbfRTVcFmz3m_PEsAPsqJyUZXQ2j8RrXcRhLFJ68Tpv6o1nU
 ```
+
+## Setting Message
+You can set a message which you will send with two different ways.
+
+#### Only message content
+You can only set a message with setMessage method.
+```php
+$discordWebhook->setMessage("Hello world!");
+```
+
+
+#### Everything of message
+You can change all details of message (username, user logo, embedded message etc.) with setData method.
+Example data format is [here](https://gist.github.com/Birdie0/78ee79402a4301b1faf412ab5f1cdcf9#example-for-a-webhook)
+
+```php
+$discordWebhook->setData(array(
+  "username" => "Webhook",
+  "avatar_url" => "https://i.imgur.com/4M34hi2.png",
+  "content" => "Text message. Up to 2000 characters.",
+  ));
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
